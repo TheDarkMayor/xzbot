@@ -1,4 +1,3 @@
-# xzbot
 
 Exploration of the xz [backdoor](https://www.openwall.com/lists/oss-security/2024/03/29/4) (CVE-2024-3094).
 Includes the following:
@@ -9,7 +8,6 @@ Includes the following:
 
 ![xzbot demo](assets/demo.png)
 
-## honeypot
 
 See [openssh.patch](openssh.patch) for a simple patch to openssh that logs any
 connection attempt with a public key N matching the backdoor format.
