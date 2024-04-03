@@ -1,24 +1,4 @@
 
-Exploration of the xz [backdoor](https://www.openwall.com/lists/oss-security/2024/03/29/4) (CVE-2024-3094).
-Includes the following:
-* [honeypot](#honeypot): fake vulnerable server to detect exploit attempts
-* [ed448 patch](#ed448-patch): patch liblzma.so to use our own ED448 public key
-* [backdoor format](#backdoor-format): format of the backdoor payload
-* [backdoor demo](#backdoor-demo): cli to trigger the RCE assuming knowledge of the ED448 private key
-
-![xzbot demo](assets/demo.png)
-
-
-See [openssh.patch](openssh.patch) for a simple patch to openssh that logs any
-connection attempt with a public key N matching the backdoor format.
-
-```
-$ git clone https://github.com/openssh/openssh-portable
-$ patch -p1 < ~/path/to/openssh.patch
-$ autoreconf
-$ ./configure
-$ make
-```
 
 Any connection attempt will appear as follows in sshd logs:
 ```
